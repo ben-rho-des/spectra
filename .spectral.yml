@@ -1,0 +1,12 @@
+extends: spectral:oas
+rules:
+  no-script-tags-in-markdown: false
+  mytitle:
+    severity: error
+    recommended: true
+    message: THis is my custome one
+    given: $.info.title
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([0-9]+.[0-9]+.[0-9]+)$"
